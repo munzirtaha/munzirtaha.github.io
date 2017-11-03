@@ -1,0 +1,1028 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset=utf-8>
+  <title>OpenBugs: Arabic-related Bugs in GNU/Linux</title>
+  <link href="//fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+   var totalBugs = 0;
+   var closedBugs = 0;
+   var openBugs = 0;
+
+   $('table').each(function() {
+    var totalCounter = $(this).find('tbody tr').length;
+    var closedCounter = $(this).find('td:empty').length;
+    var openCounter = $(this).find('td > a').length;
+
+    totalBugs += totalCounter;
+    closedBugs += closedCounter;
+    openBugs += openCounter;
+    $(this).find('tfoot').append("<tr><td colspan=3><em># of open bugs: </em>"+ openCounter +"</td></tr>");
+   });
+   $("li:last").after("<li><strong>Total Bugs: </strong>"+ totalBugs);
+   $("li:last").after("<li><strong>Closed Bugs: </strong>"+ closedBugs);
+   $("li:last").after("<li><strong>Open Bugs: </strong>"+ openBugs);
+  });
+  </script>
+
+  <style>
+  body {
+   margin: auto;
+   max-width: 75rem;
+   background-color: #d9d9d9;
+  }
+  h1 {
+   text-shadow: 0 0 4px #ccc, 0 -5px 4px #ff3, 2px -10px 6px #fd3, -2px -15px 11px #f80, 2px -18px 18px #f20;
+  }
+  table {
+   margin-bottom: 2rem;
+   width: 100%;
+  }
+  table, td, th {
+   border: 1px solid gray;
+  }
+  caption {
+   font-size: 1.5rem;
+   color: #ca2f1e;
+   text-shadow: 0 0 4px #ccc, 0 -5px 4px #ff3, 2px -10px 6px #fd3, -2px -15px 11px #f80, 2px -18px 18px #f20;
+  }
+  col:nth-child(1) {
+   background: #fecb65;
+  }
+  col:nth-child(2) {
+   background: #e34c26;
+  }
+  col:nth-child(3) {
+   background: #f06529;
+   width: 95%;
+  }
+  .description {
+   font-family: pacifico;
+   font-size: 1.5rem;
+  }
+  </style>
+ </head>
+<body>
+<header>
+ <h1><img src="//upload.wikimedia.org/wikipedia/commons/7/7e/Buggie_new.png" alt="Bugzilla Logo" width="100">OpenBugs: Arabic-related Bugs in GNU/Linux</h1>
+  <div class="description">
+   <p><img src="bug.gif" alt="Bug">These are the most annoying open bugs I have encountered in GNU/Linux, mostly related to Arabic and RTL in general.</p>
+  </div>
+</header>
+
+<h2>Document Information</h2>
+<ul>
+ <li><strong>Author: </strong>Munzir Taha
+ <li><strong>Pub date: </strong><time datetime="2004-06-16">16-Jun-2004</time>
+ <li><strong>Last updated: </strong><time datetime="2017-11-03">3-Nov-2017</time>
+</ul>
+
+<table id="harfbuzz">
+ <caption><a href="//www.freedesktop.org/wiki/Software/HarfBuzz/"><img src="//upload.wikimedia.org/wikipedia/commons/8/8b/Harfbuzz.svg" alt="KDE" width="100"></a>HarfBuzz RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//github.com/behdad/harfbuzz/issues/540">540</a></del></td>
+   <td><del>harfbuzz truncates Arabic text</del></td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="qt">
+ <caption><a href="//qt-project.org/"><img src="//doc.qt.io/images/qt-logo.svg" alt="Qt" width="80"></a>Qt RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/thread00107-0.html">1</a></del></td>
+   <td><del>Arabic issue #1: QSpinBox doen't work properly with Arabic locale</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-05/thread00889-0.html">3</a></del></td>
+   <td><del>Text doesn't inherits the widgets direction</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-01/thread00777-0.html">5</a></del></td>
+   <td><del>Arabic Harakat/Diacritics cause spaces/gaps though they are nonspacing marks</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-01/thread00779-0.html">6</a></del></td>
+   <td><del>Harakat/Diacritics position is not correct</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/thread00089-0.html">7</a></del></td>
+   <td><del>The "Basic colors" and "Custom colors" palette doesn't respond to -reverse</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/thread00095-0.html">8</a></del></td>
+   <td><del>Accelerators mess the arabic text in QPushButtons, QMenu, ...</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/thread00094-0.html">10</a></del></td>
+   <td><del>TableWidget doesn't display the left border when -reverse is used</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/thread00093-0.html">11</a></del></td>
+   <td><del>The status bar doesn't display any message when the layout is reversed</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/thread00092-0.html">12</a></del></td>
+   <td><del>QToolBar can't be dragged properly/smoothly when the application is reversed</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/thread00107-0.html">13</a></del></td>
+   <td><del>QHBox automatically assigned positions in -reverse mode are not reasonable</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/thread00107-0.html">15</a></del></td>
+   <td><del>QLineEdit Widget displays Arabic in reverse order</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/thread00107-0.html">16</a></del></td>
+   <td><del>Arabic issue #16: QMessageBox doesn't RightAlign "Text" in reverse mode by default</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/msg00257.html#msg00257">17</a></del></td>
+   <td><del>QProgressBar displays the percentage sign in the wrong postion when reversed!</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-02/msg00929.html">18</a></del></td>
+   <td><del>app.setFont(QFont("")) causes a run-time crash!</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/msg00104.html">19</a></del></td>
+   <td><del>QTabWidget doesn't display properly when reversed</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/msg00107.html">22</a></del></td>
+   <td><del>qTextEdit-&gt;setAlignment(Qt::AlignRight) problems.</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/msg00424.html">25</a></del></td>
+   <td><del>The cursor doesn't show at the beginning of an AlignRight Arabic text</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/msg00432.html">26</a></del></td>
+   <td><del>QTextBrowser crashes with some web pages.</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-04/thread00895-0.html">37</a></del></td>
+   <td><del>GSUB tables don't work properly for Arabic fonts</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-04/thread00894-0.html">38</a></del></td>
+   <td><del>Arabic Fonts are duplicated in a strange way</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-05/thread00005-0.html">39</a></del></td>
+   <td><del>Qt4 cut the text edges for some Arabic fonts</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-05/thread00180-0.html">40</a></del></td>
+   <td><del>setAlignment(Qt:AlignJustify) renders duplicated letters!</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-05/thread00205-0.html">42</a></del></td>
+   <td><del>setLineWrapMode doesn't support setAlignment(Qt::AlignTrailing)</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//lists.trolltech.com/qt4-preview-feedback/2005-05/thread00794-0.html">43</a></del></td>
+   <td><del>A Segmentation fault if Arabic characters' font size &gt;= 65</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.launchpad.net/ubuntu/+source/qt-x11-free/+bug/11753">44</a></del></td>
+   <td><del>Arabic support severely broken</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugreports.qt.io/browse/QTBUG-22585">22585</a></del></td>
+   <td><del>path.addText introduces gaps between the should-be connected Arabic characters</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugreports.qt.io/browse/QTBUG-22635">22635</a></del></td>
+   <td><del>TAB behaviour is odd in RTL mode</del></td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/msg00105.html">20</a></td>
+   <td>A request for an API solution of reversing the arrows.</td>
+  </tr>
+  <tr>
+   <td>2</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/msg00109.html">23</a></td>
+   <td>QPushButton doesn't show the Arabic letter underlined when diacritics are used</td>
+  </tr>
+  <tr>
+   <td>3</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/msg00438.html">27</a></td>
+   <td>QFontDialog::getFont doesn't display the sample text in the language of the font</td>
+  </tr>
+  <tr>
+   <td>4</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/thread00528-0.html">29</a></td>
+   <td>Some Arabic fonts doesn't display any character in Qt</td>
+  </tr>
+  <tr>
+   <td>5</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/thread00593-0.html">30</a></td>
+   <td>Word ligatures from Arabic Presentation Forms-A don't render properly in Qt</td>
+  </tr>
+  <tr>
+   <td>6</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/thread00782-0.html">31</a></td>
+   <td>Arabic filenames with English extensions are displayed in the wrong order</td>
+  </tr>
+  <tr>
+   <td>7</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/thread00999-0.html">33</a></td>
+   <td>A cursor on the begining of a new paragraph on a QTextEditQLineEdit fails to indicate the language</td>
+  </tr>
+  <tr>
+   <td>8</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/thread00998-0.html">34</a></td>
+   <td>Mouse and keyboard selection is a little buggy with LAM-ALEF in a QTextEdit/QLineEdit</td>
+  </tr>
+  <tr>
+   <td>9</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/thread01006-0.html">35</a></td>
+   <td>A request for an addition of a setDiacriticsColor slot </td>
+  </tr>
+  <tr>
+   <td>10</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-04/msg00445.html">36</a></td>
+   <td>Hijri Calendar system is not supported</td>
+  </tr>
+  <tr>
+   <td>11</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-05/msg00204.html">41</a></td>
+   <td>Function names and Qt Documentation fails to consider RTL many times</td>
+  </tr>
+  <tr>
+   <td>12</td>
+   <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-05/msg01097.html">45</a></td>
+   <td>A shortcut (signified by preceding it with an ampersand in the text) won't be underlined </td>
+  </tr>
+  <tr>
+   <td>13</td>
+   <td><a href="//bugreports.qt.io/browse/QTBUG-12286">12286</a></td>
+   <td>Shortcut key doesn't work with Arabic letters locale</td>
+  </tr>
+  <tr>
+   <td>14</td>
+   <td><a href="//bugreports.qt.io/browse/QTBUG-29629">29629</a></td>
+   <td>Arabic text is broken badly with some fonts</td>
+  </tr>
+  <tr>
+   <td>15</td>
+   <td><a href="//bugreports.qt.io/browse/QTBUG-22623">22623</a></td>
+   <td>Text doesn't inherits the widgets direction</td>
+  </tr>
+  <tr>
+   <td>16</td>
+   <td><a href="//bugreports.qt.io/browse/QTBUG-22727">22727</a></td>
+   <td>QCollator should have an option to ignore diacritical marks</td>
+  </tr>
+  <tr>
+   <td>17</td>
+   <td><a href="//bugreports.qt.io/browse/QTBUG-63326">63326</a></td>
+   <td>Qt Arabic support is broken with some fonts</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="kde">
+ <caption><a href="//www.kde.org/"><img src="//upload.wikimedia.org/wikipedia/commons/8/8d/KDE_logo.svg" alt="KDE" width="100"></a>KDE RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.kde.org/show_bug.cgi?id=69458">69458</a></del></td>
+   <td><del>ctrlC + ctrlV do not work in arabic kayboard</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.kde.org/show_bug.cgi?id=83278">83278</a></del></td>
+   <td><del>If I cut -b1 arabic_file in konsole, the output displayed in screen is not correct</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.kde.org/show_bug.cgi?id=260166">260166</a></del></td>
+   <td><del>Typing an Arabic letter and a diacrtic mark inserts one or more pages</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.kde.org/show_bug.cgi?id=285363">285363</a></del></td>
+   <td><del>regression: Typing an Arabic letter used to align the paragraph to the right</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.kde.org/show_bug.cgi?id=243755">243755</a></del></td>
+   <td><del>Typing an Arabic letter and a diacrtic mark inserts one or more pages</del></td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td><a href="//bugs.kde.org/show_bug.cgi?id=244190">244190</a></td>
+   <td>check consistency between Tools -> Spelling and inline checker.</td>
+  </tr>
+  <tr>
+   <td>2</td>
+   <td><a href="//bugs.kde.org/show_bug.cgi?id=285496">285496</a></td>
+   <td>Regression: textDirection is set to LeftToRight instead of RightToLeft for Arabic text</td>
+  </tr>
+  <tr>
+   <td>3</td>
+   <td><a href="//bugs.kde.org/show_bug.cgi?id=286971">286971</a></td>
+   <td>Arabic MS Office documents opens with wrong alignments</td>
+  </tr>
+  <tr>
+   <td>4</td>
+   <td><a href="//bugs.kde.org/show_bug.cgi?id=308662">308662</a></td>
+   <td>Arabic/RTL support is missing in the artistic text tool.</td>
+  </tr>
+  <tr>
+   <td>5</td>
+   <td><a href="//bugs.kde.org/show_bug.cgi?id=378726">378726</a></td>
+   <td>baloosearch doesn't return the expected result</td>
+  </tr>
+  <tr>
+   <td>6</td>
+   <td><a href="//bugs.kde.org/show_bug.cgi?id=378797">378797</a></td>
+   <td>RTL drop-down menus misalignment</td>
+  </tr>
+  <tr>
+   <td>7</td>
+   <td><a href="//bugs.kde.org/show_bug.cgi?id=378938">378938</a></td>
+   <td>Arabic Notes displayed in Kontact are showing garbage upon hovering</td>
+  </tr>
+  <tr>
+   <td>8</td>
+   <td><a href="//bugs.kde.org/show_bug.cgi?id=384333">384333</a></td>
+   <td>Arabic diacritics (Harakat) in file names causes miscalculation of highlighted text upon renaming</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="libreoffice">
+ <caption><a href="//www.libreoffice.org/"><img alt="LibreOffice" src="//wiki.documentfoundation.org/images/2/27/LibreOffice-Initial-Artwork-Logo.svg" width="200"></a>LibreOffice RTL Bugs</caption>
+ <col>
+ <col>
+ <col/>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.freedesktop.org/show_bug.cgi?id=42558">42558</a></del></td>
+   <td><del>FORMATTING: Missing Arabic Abjad numerals for page numbers</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.freedesktop.org/show_bug.cgi?id=42561">42561</a></del></td>
+   <td><del>Changing a long paragraph direction reverses the letters</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.freedesktop.org/show_bug.cgi?id=52204">52204</a></del></td>
+   <td><del>Find/Search option should support ignoring diacritics (Arabic Tashkeel and Hebrew nikkud)</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.freedesktop.org/show_bug.cgi?id=43093">43093</a></del></td>
+   <td><del>FILEOPEN: MS Office documents opens with wrong alignment and directionality</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.freedesktop.org/show_bug.cgi?id=72488">72488</a></del></td>
+   <td><del>Ligatures spanning spaces break when showing nonprinting characters</del></td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=62063">62063</a></td>
+   <td>FORMATTING: Changing the font before typing Arabic text doesn't work</td>
+  </tr>
+  <tr>
+   <td>2</td>
+   <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=64830">64830</a></td>
+   <td>RTL: The Arabic languages for the CTL spellcheck should be merged into one</td>
+  </tr>
+  <tr>
+   <td>3</td>
+   <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=71956">71956</a></td>
+   <td>The ability to set a different color for diacritics is missing for Arabic</td>
+  </tr>
+  <tr>
+   <td>4</td>
+   <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=106345">106345</a></td>
+   <td>In search of a better name for last line justification</td>
+  </tr>
+  <tr>
+   <td>5</td>
+   <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=106653">106653</a></td>
+   <td>RTL Arabic justified text has some gaps between characters</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="prestashop">
+ <caption><a href="//www.prestashop.com/"><img src="//www.prestashop.com/sites/all/themes/prestashop/images/logo-couleur.svg" alt="PrestaShop" width="150"></a>PrestaShop RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>1</td>
+   <td><a href="http://forge.prestashop.com/browse/BOOM-2346">2346</a></td>
+   <td>Some Back Office Links are not working in RTL</td>
+  </tr>
+  <tr>
+   <td>2</td>
+   <td><a href="http://forge.prestashop.com/browse/BOOM-2809">2809</a></td>
+   <td>SQLSTATE[01000]: Warning: 1265 Data truncated for column 'icon' at row 2</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="drupal">
+ <caption><a href="//www.drupal.org/"><img src="//upload.wikimedia.org/wikipedia/commons/c/c1/Drupal-wordmark.svg" alt="Drupal" width="100"></a>Drupal RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/37407">37407</a></del></td>
+   <td><del>cvs.mysql says KEY create (created)</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/137213">137213</a></del></td>
+   <td><del>INSTALL.mysql.txt needlessly FLUSH PRIVILEGES;</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/53652">53652</a></del></td>
+   <td><del>RTL/BiDi support in Drupal missing a default drupal_RTL.css file</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/232321">232321</a></del></td>
+   <td><del>misleading database.inc documentation</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/921582">921582</a></del></td>
+   <td><del>is_null should be replaced by !isset because it's faster</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/915322">915322</a></del></td>
+   <td><del>coding standard violation</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/920154">920154</a></del></td>
+   <td><del>simpletest coding standard violation</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/921098">921098</a></del></td>
+   <td><del>!is_null should be replaced by isset because it's faster</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/921582">921582</a></del></td>
+   <td><del>!is_null should be replaced by isset because it's faster</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/921606">921606</a></del></td>
+   <td><del>!is_null should be replaced by isset because it's faster</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/923424">923424</a></del></td>
+   <td><del>/* RTL */ comments against CSS coding standards</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/924686">924686</a></del></td>
+   <td><del>space required after foreach construct</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/2505201">2505201</a></del></td>
+   <td><del>Quick Edit toolbar's arrow should be reversed in RTL</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/2501843">2501843</a></del></td>
+   <td><del>item-list class inherited the wrong margin in RTL</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/2502135">2502135</a></del></td>
+   <td><del>Bartik footer block menu-item misaligned in RTL</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/2512468">2512468</a></del></td>
+   <td><del>Regression: Indented styles for indented comments are missing in Bartik</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/2509390">2509390</a></del></td>
+   <td><del>tags has a wrong right padding in RTL</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//www.drupal.org/node/">2509390</a></del></td>
+   <td><del>tags has a wrong right padding in RTL</del></td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td><a href="//www.drupal.org/node/2514734">2514734</a></td>
+   <td>A forgotten padding-right for a ul made inline links look wrong in RTL</td>
+  </tr>
+  <tr>
+   <td>2</td>
+   <td><a href="//www.drupal.org/node/2512870">2512870</a></td>
+   <td>css cleanup and killing one more "win over specifity" rules</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="samba">
+ <caption><a href="//www.samba.org/"><img src="//upload.wikimedia.org/wikipedia/commons/e/e8/Samba_Logo.png" alt="Samba" width="150"></a>Samba RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugzilla.samba.org/show_bug.cgi?id=1338">1338</a></del></td>
+   <td><del>smbclient -L netbiosname doesn't display the Arabic shares folder names nor the Arabic comments on the English shares.</del></td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="scribus">
+ <caption><a href="//www.scribus.net/"><img src="//upload.wikimedia.org/wikipedia/commons/8/85/Scribus_logo.svg" alt="Scribus" width="100"></a>Scribus RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.scribus.net/view.php?id=1079">1079</a></del></td>
+   <td><del>Arabic is not supported in Scribus yet.</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.scribus.net/view.php?id=14421">14421</a></del></td>
+   <td><del>Check Spelling ... is broken for Arabic (Hunspell 1.5 is not search for by CMake)</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.scribus.net/view.php?id=14445">14445</a></del></td>
+   <td><del>Arabic "Align Text Forced Justified" single word wrongly justified to the left</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//bugs.scribus.net/view.php?id=14679">14679</a></del></td>
+   <td><del>Document Setup missing the Arabic language</del></td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td><a href="//bugs.scribus.net/view.php?id=14806">14806</a></td>
+   <td>RTL interface glitches: cuts off the beginning of the Arabic-translated menus and wrong % direction</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="poppler">
+ <caption><a href="//poppler.freedesktop.org/"><img src="//poppler.freedesktop.org/logo.png" alt="Poppler" width="100"></a>Poppler RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>1</td>
+   <td><a href="//bugs.freedesktop.org/show_bug.cgi?id=42944">42944</a></td>
+   <td>Arabic text in pdf forms cannot be saved or printed</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="mupdf">
+ <caption><a href="//mupdf.com/"><img src="//mupdf.com/mupdf-logo.png" alt="MuPDF" width="100"></a>MuPDF RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>1</td>
+   <td><a href="//bugs.ghostscript.com/show_bug.cgi?id=697708">697708</a></td>
+   <td>Arabic text search highlights the wrong letter and doesn't support shaping</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="pdf.js">
+ <caption><a href="//mozilla.github.com/pdf.js/"><img src="//mozilla.github.io/pdf.js/images/logo.svg" alt="pdf.js" width="100"></a>pdf.js RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>1</td>
+   <td><a href="//github.com/mozilla/pdf.js/issues/2575">2575</a></td>
+   <td>Searching for an Arabic phrase with diacritics returns "Phrase not found"</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="chromium">
+ <caption><a href="//code.google.com/p/chromium/"><img src="//upload.wikimedia.org/wikipedia/commons/5/5f/Chromium_11_Logo.svg" alt="pdf.js" width="100"></a>Chromium RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//code.google.com/p/chromium/issues/detail?id=224292">224292</a></del></td>
+   <td><del>regression: kashida support is lost</del></td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td><a href="//code.google.com/p/chromium/issues/detail?id=291172">291172</a></td>
+   <td>Rendering of rtl text in textPath svg elements is not correct</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="gramps">
+ <caption><a href="//gramps-project.org"><img src="//upload.wikimedia.org/wikipedia/commons/b/ba/GRAMPS_logo.png" alt="Gramps" width="150"></a>Gramps RTL Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//gramps-project.org/bugs/view.php?id=7469">7469</a></del></td>
+   <td><del>Reorder tool: global name 'gen' is not defined</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//gramps-project.org/bugs/view.php?id=7539">7539</a></del></td>
+   <td><del>Some gramps windows appear either too small or too big</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//gramps-project.org/bugs/view.php?id=7803">7803</a></del></td>
+   <td><del>ERROR: grampsapp.py: line 114: Unhandled exception</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//gramps-project.org/bugs/view.php?id=10136">10136</a></del></td>
+   <td><del>Use regular expressions crashes gramps</del></td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td><a href="//gramps-project.org/bugs/view.php?id=7464">7464</a></td>
+   <td>Given Name Cloud Gramplet splits up given names into words (broken up by spaces)</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="amiri">
+ <caption><a href="//github.com/alif-type/amiri"><img src="http://www.amirifont.org/banner.jpg" alt="Amiri Font" width="100"></a>Amiri Font Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//github.com/khaledhosny/quaran-data/issues/1">1</a></del></td>
+   <td><del>مجراها ومرساها</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//github.com/khaledhosny/quaran-data/issues/4">4</a></del></td>
+   <td><del>كلمة تبع ينقصها شرطتان</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//github.com/alif-type/amiri/issues/90">90</a></del></td>
+   <td><del>لون الواو الصغيرة بعد هاء ضمير الغائب ينبغي أن يكون مثل الياء الصغيرة</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//github.com/alif-type/amiri/issues/101">101</a></del></td>
+   <td><del>اقتراح بتغيير ألوان التشكيل للحمرة موافقه للمصاحف القديمة</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//github.com/alif-type/amiri/issues/106">106</a></del></td>
+   <td><del>ARABIC OPEN KASRATAN' (U+08F2) wrong position</del></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><del><a href="//github.com/alif-type/amiri/issues/87">87</a></del></td>
+   <td><del>اختلاف الألوان بين المتشابهات</del></td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td><a href="//github.com/alif-type/amiri/issues/73">73</a></td>
+   <td>اتصال حركة الخاء مع حركة النون المتبوعة بألف مثل كلمة الخَنَّاس</td>
+  </tr>
+  <tr>
+   <td>2</td>
+   <td><a href="//github.com/alif-type/amiri/issues/88">88</a></td>
+   <td>تركيب الميم بعد التاء</td>
+  </tr>
+  <tr>
+   <td>3</td>
+   <td><a href="//github.com/alif-type/amiri/issues/89">89</a></td>
+   <td>اختلاف ميلان الكاف مع الأحرف غير متناسق</td>
+  </tr>
+  <tr>
+   <td>4</td>
+   <td><a href="//github.com/alif-type/amiri/issues/91">91</a></td>
+   <td>تراكب النون مع الكاف يجعل حركة النون فوق الكاف</td>
+  </tr>
+  <tr>
+   <td>5</td>
+   <td><a href="//github.com/alif-type/amiri/issues/92">92</a></td>
+   <td>شكل النبرة بعد الكاف مختلف</td>
+  </tr>
+  <tr>
+   <td>6</td>
+   <td><a href="//github.com/alif-type/amiri/issues/94">94</a></td>
+   <td>تراكب الأحرف في "يتخبطه" ليس ببساطة الأصل</td>
+  </tr>
+  <tr>
+   <td>7</td>
+   <td><a href="//github.com/alif-type/amiri/issues/95">95</a></td>
+   <td>التصاق الكسرة بحرف الميم في "العلم"</td>
+  </tr>
+  <tr>
+   <td>8</td>
+   <td><a href="//github.com/alif-type/amiri/issues/96">96</a></td>
+   <td>التصاق الحركات في "أَنَّهم"</td>
+  </tr>
+  <tr>
+   <td>9</td>
+   <td><a href="//github.com/alif-type/amiri/issues/97">97</a></td>
+   <td>التصاق كسرة اللام بحرف الجيم في "تولِج"</td>
+  </tr>
+  <tr>
+   <td>10</td>
+   <td><a href="//github.com/alif-type/amiri/issues/98">98</a></td>
+   <td>اتصال الحركات في كلمة "تتقوا"</td>
+  </tr>
+  <tr>
+   <td>11</td>
+   <td><a href="//github.com/alif-type/amiri/issues/99">99</a></td>
+   <td>التصاق في "وأنبتها"</td>
+  </tr>
+  <tr>
+   <td>12</td>
+   <td><a href="//github.com/alif-type/amiri/issues/104">104</a></td>
+   <td>تداخل الحركات في "قَالُوۤا۟"</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="reem-kufi">
+ <caption><a href="//github.com/alif-type/reem-kufi"></a>Reem Kufi Font Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>1</td>
+   <td><a href="//github.com/alif-type/reem-kufi/issues/13">13</a></td>
+   <td>Add vowel marks</td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<table id="quran">
+ <caption><a href="//github.com/khaledhosny/quran-data"></a>Quran Data Bugs</caption>
+ <col>
+ <col>
+ <col>
+ <thead>
+  <tr>
+   <th>No</th>
+   <th>ID</th>
+   <th>Summary</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td></td>
+   <td><del><a href="//github.com/khaledhosny/quaran-data/issues/6">6</a></del></td>
+   <td><del>علامة جواز الوقف وضعت خطأ مكان علامة الوقف أولى</del></td>
+  </tr>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+
+<p>
+    <a href="//jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="//jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!">
+    </a>
+    <a href="//www.w3.org/html/logo/">
+      <img src="//www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
+    </a>
+</p>
+
+<!-- Place this tag where you want the +1 button to render -->
+<div class="g-plusone" data-annotation="inline"></div>
+
+<!-- Place this render call where appropriate -->
+<script>
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '//apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<details open="open">
+<summary>Copyleft</summary>
+<p>2004-2017 Munzir Taha Obeid</p>
+</details>
+</body>
+</html>
