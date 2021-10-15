@@ -13,7 +13,7 @@
    $('table').each(function() {
     var totalCounter = $(this).find('tbody tr').length;
     var closedCounter = $(this).find('td:empty').length;
-    var openCounter = $(this).find('td > a').length;
+    var openCounter = $(this).find('td.issue').length;
 
     totalBugs += totalCounter;
     closedBugs += closedCounter;
@@ -267,77 +267,77 @@
   <tr>
    <td>1</td>
    <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/msg00105.html">20</a></td>
-   <td>A request for an API solution of reversing the arrows.</td>
+   <td class="issue">A request for an API solution of reversing the arrows.</td>
   </tr>
   <tr>
    <td>2</td>
    <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/msg00109.html">23</a></td>
-   <td>QPushButton doesn't show the Arabic letter underlined when diacritics are used</td>
+   <td class="issue">QPushButton doesn't show the Arabic letter underlined when diacritics are used</td>
   </tr>
   <tr>
    <td>3</td>
    <td><a href="//lists.fedoraproject.org/archives/list/trans-ar@lists.fedoraproject.org/message/IEXBQ35EDR4KQHT6USFXO35G7HJJM5GR/">27</a></td>
-   <td>QFontDialog::getFont doesn't display the sample text in the language of the font</td>
+   <td class="issue">QFontDialog::getFont doesn't display the sample text in the language of the font</td>
   </tr>
   <tr>
    <td>4</td>
    <td><a href="//lists.fedoraproject.org/archives/list/trans-ar@lists.fedoraproject.org/message/BDO3WU55K6E7GWNO3ZWMQ6SDBYXBZOHP/">29</a></td>
-   <td>Some Arabic fonts doesn't display any character in Qt</td>
+   <td class="issue">Some Arabic fonts doesn't display any character in Qt</td>
   </tr>
   <tr>
    <td>5</td>
    <td><a href="//lists.fedoraproject.org/archives/list/trans-ar@lists.fedoraproject.org/message/H4JJ7KHAXSRXNB4JRRLXO6MC6YZYTF7T/">30</a></td>
-   <td>Word ligatures from Arabic Presentation Forms-A don't render properly in Qt</td>
+   <td class="issue">Word ligatures from Arabic Presentation Forms-A don't render properly in Qt</td>
   </tr>
   <tr>
    <td>6</td>
    <td><a href="//lists.fedoraproject.org/archives/list/trans-ar@lists.fedoraproject.org/message/IJVGCBJ6IYEJOYAIP33BJALFKNTXNAOI/">31</a></td>
-   <td>Arabic filenames with English extensions are displayed in the wrong order</td>
+   <td class="issue">Arabic filenames with English extensions are displayed in the wrong order</td>
   </tr>
   <tr>
    <td>7</td>
    <td><a href="//lists.fedoraproject.org/archives/list/trans-ar@lists.fedoraproject.org/message/G3GZIDOU5EIHH5MHRSM2VICDNECZL5CN/">33</a></td>
-   <td>A cursor on the begining of a new paragraph on a QTextEditQLineEdit fails to indicate the language</td>
+   <td class="issue">A cursor on the begining of a new paragraph on a QTextEditQLineEdit fails to indicate the language</td>
   </tr>
   <tr>
    <td>8</td>
    <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/thread00998-0.html">34</a></td>
-   <td>Mouse and keyboard selection is a little buggy with LAM-ALEF in a QTextEdit/QLineEdit</td>
+   <td class="issue">Mouse and keyboard selection is a little buggy with LAM-ALEF in a QTextEdit/QLineEdit</td>
   </tr>
   <tr>
    <td>9</td>
    <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-03/thread01006-0.html">35</a></td>
-   <td>A request for an addition of a setDiacriticsColor slot </td>
+   <td class="issue">A request for an addition of a setDiacriticsColor slot </td>
   </tr>
   <tr>
    <td>10</td>
    <td><a href="//lists.trolltech.com/qt4-preview-feedback/2005-04/msg00445.html">36</a></td>
-   <td>Hijri Calendar system is not supported</td>
+   <td class="issue">Hijri Calendar system is not supported</td>
   </tr>
   <tr>
    <td>11</td>
    <td><a href="//lists.fedoraproject.org/archives/list/trans-ar@lists.fedoraproject.org/message/5XMIWPNW56VJZRC75KLW25GBNTMA5YKL/">41</a></td>
-   <td>Function names and Qt Documentation fails to consider RTL many times</td>
+   <td class="issue">Function names and Qt Documentation fails to consider RTL many times</td>
   </tr>
   <tr>
    <td>12</td>
    <td><a href="//lists.fedoraproject.org/archives/list/trans-ar@lists.fedoraproject.org/message/KNETGQ4ZSZ5VHF6NY3KVLVBYFWJKNCI6/">45</a></td>
-   <td>A shortcut (signified by preceding it with an ampersand in the text) won't be underlined</td>
+   <td class="issue">A shortcut (signified by preceding it with an ampersand in the text) won't be underlined</td>
   </tr>
   <tr>
    <td>13</td>
    <td><a href="//bugreports.qt.io/browse/QTBUG-22623">22623</a></td>
-   <td>Text doesn't inherits the widgets direction</td>
+   <td class="issue">Text doesn't inherits the widgets direction</td>
   </tr>
   <tr>
    <td>14</td>
    <td><a href="//bugreports.qt.io/browse/QTBUG-22727">22727</a></td>
-   <td>QCollator should have an option to ignore diacritical marks</td>
+   <td class="issue">QCollator should have an option to ignore diacritical marks</td>
   </tr>
   <tr>
    <td>15</td>
    <td><a href="//bugreports.qt.io/browse/QTBUG-88716">88716</a></td>
-   <td>Eastern Arabic numerals are not recognized as such in Qt Widgets</td>
+   <td class="issue">Eastern Arabic numerals are not recognized as such in Qt Widgets</td>
   </tr>
  </tbody>
  <tfoot>
@@ -400,32 +400,32 @@
   <tr>
    <td>1</td>
    <td><a href="//bugs.kde.org/show_bug.cgi?id=285496">285496</a></td>
-   <td>Regression: textDirection is set to LeftToRight instead of RightToLeft for Arabic text</td>
+   <td class="issue">Regression: textDirection is set to LeftToRight instead of RightToLeft for Arabic text</td>
   </tr>
   <tr>
    <td>2</td>
    <td><a href="//bugs.kde.org/show_bug.cgi?id=286971">286971</a></td>
-   <td>Arabic MS Office documents opens with wrong alignments</td>
+   <td class="issue">Arabic MS Office documents opens with wrong alignments</td>
   </tr>
   <tr>
    <td>3</td>
    <td><a href="//bugs.kde.org/show_bug.cgi?id=378726">378726</a></td>
-   <td>baloosearch doesn't find certain substrings</td>
+   <td class="issue">baloosearch doesn't find certain substrings</td>
   </tr>
   <tr>
    <td>4</td>
    <td><a href="//bugs.kde.org/show_bug.cgi?id=378797">378797</a></td>
-   <td>RTL drop-down menus misalignment</td>
+   <td class="issue">RTL drop-down menus misalignment</td>
   </tr>
   <tr>
    <td>5</td>
    <td><a href="//bugs.kde.org/show_bug.cgi?id=384333">384333</a></td>
-   <td>Arabic diacritics (Harakat) in file names causes miscalculation of highlighted text upon renaming</td>
+   <td class="issue">Arabic diacritics (Harakat) in file names causes miscalculation of highlighted text upon renaming</td>
   </tr>
   <tr>
    <td>6</td>
    <td><a href="//bugs.kde.org/show_bug.cgi?id=394471">394471</a></td>
-   <td>Okular fails to read PageDirection R2L in PDF files</td>
+   <td class="issue">Okular fails to read PageDirection R2L in PDF files</td>
   </tr>
   <tr>
    <td>7</td>
@@ -435,7 +435,7 @@
   <tr>
    <td>8</td>
    <td><a href="//bugs.kde.org/show_bug.cgi?id=437189">437189</a></td>
-   <td>Allow "index file content" per file type so it can be enabled for media but not for documents.</td>
+   <td class="issue">Allow "index file content" per file type so it can be enabled for media but not for documents.</td>
   </tr>
  </tbody>
  <tfoot>
@@ -493,32 +493,32 @@
   <tr>
    <td>1</td>
    <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=62063">62063</a></td>
-   <td>FORMATTING: Changing the font before typing Arabic text doesn't work</td>
+   <td class="issue">FORMATTING: Changing the font before typing Arabic text doesn't work</td>
   </tr>
   <tr>
    <td>2</td>
    <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=64830">64830</a></td>
-   <td>RTL: The Arabic languages for the CTL spellcheck should be merged into one</td>
+   <td class="issue">RTL: The Arabic languages for the CTL spellcheck should be merged into one</td>
   </tr>
   <tr>
    <td>3</td>
    <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=71956">71956</a></td>
-   <td>The ability to set a different color for diacritics is missing for Arabic</td>
+   <td class="issue">The ability to set a different color for diacritics is missing for Arabic</td>
   </tr>
   <tr>
    <td>4</td>
    <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=106653">106653</a></td>
-   <td>RTL Arabic justified text has some gaps between characters</td>
+   <td class="issue">RTL Arabic justified text has some gaps between characters</td>
   </tr>
   <tr>
    <td>5</td>
    <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=116969">116969</a></td>
-   <td>Justification by alternative methods</td>
+   <td class="issue">Justification by alternative methods</td>
   </tr>
   <tr>
    <td>6</td>
    <td><a href="//www.libreoffice.org/bugzilla/show_bug.cgi?id=137639">137639</a></td>
-   <td>Copying and pasting English text converts it to Chinese</td>
+   <td class="issue">Copying and pasting English text converts it to Chinese</td>
   </tr>
  </tbody>
  <tfoot>
@@ -659,12 +659,12 @@
   <tr>
    <td>1</td>
    <td><a href="//www.drupal.org/node/2514734">2514734</a></td>
-   <td>A forgotten padding-right for a ul made inline links look wrong in RTL</td>
+   <td class="issue">A forgotten padding-right for a ul made inline links look wrong in RTL</td>
   </tr>
   <tr>
    <td>2</td>
    <td><a href="//www.drupal.org/node/2512870">2512870</a></td>
-   <td>css cleanup and killing one more "win over specifity" rules</td>
+   <td class="issue">css cleanup and killing one more "win over specifity" rules</td>
   </tr>
  </tbody>
  <tfoot>
@@ -735,27 +735,27 @@
   <tr>
    <td>1</td>
    <td><a href="//bugs.scribus.net/view.php?id=14544">14544</a></td>
-   <td>Layout should aware of RTL pages</td>
+   <td class="issue">Layout should aware of RTL pages</td>
   </tr>
   <tr>
    <td>2</td>
    <td><a href="//bugs.scribus.net/view.php?id=14806">14806</a></td>
-   <td>RTL interface glitches: cuts off the beginning of the Arabic-translated menus and wrong % direction</td>
+   <td class="issue">RTL interface glitches: cuts off the beginning of the Arabic-translated menus and wrong % direction</td>
   </tr>
   <tr>
    <td>3</td>
    <td><a href="//bugs.scribus.net/view.php?id=15243">15243</a></td>
-   <td>Overline support is missing</td>
+   <td class="issue">Overline support is missing</td>
   </tr>
   <tr>
    <td>4</td>
    <td><a href="//bugs.scribus.net/view.php?id=15244">15244</a></td>
-   <td>Underlining Arabic text shows as small broken lines</td>
+   <td class="issue">Underlining Arabic text shows as small broken lines</td>
   </tr>
   <tr>
    <td>5</td>
    <td><a href="//bugs.scribus.net/view.php?id=15244">15257</a></td>
-   <td>Arabic font overline artifact on screen</td>
+   <td class="issue">Arabic font overline artifact on screen</td>
   </tr>
  </tbody>
  <tfoot>
@@ -778,7 +778,7 @@
   <tr>
    <td>1</td>
    <td><a href="//bugs.ghostscript.com/show_bug.cgi?id=697708">697708</a></td>
-   <td>Arabic text search highlights the wrong letter and doesn't support shaping</td>
+   <td class="issue">Arabic text search highlights the wrong letter and doesn't support shaping</td>
   </tr>
  </tbody>
  <tfoot>
@@ -801,7 +801,7 @@
   <tr>
    <td>1</td>
    <td><a href="//github.com/mozilla/pdf.js/issues/2575">2575</a></td>
-   <td>Searching for an Arabic phrase with diacritics returns "Phrase not found"</td>
+   <td class="issue">Searching for an Arabic phrase with diacritics returns "Phrase not found"</td>
   </tr>
  </tbody>
  <tfoot>
@@ -829,7 +829,7 @@
   <tr>
    <td>1</td>
    <td><a href="//code.google.com/p/chromium/issues/detail?id=291172">291172</a></td>
-   <td>Rendering of rtl text in textPath svg elements is not correct</td>
+   <td class="issue">Rendering of rtl text in textPath svg elements is not correct</td>
   </tr>
  </tbody>
  <tfoot>
@@ -872,7 +872,7 @@
   <tr>
    <td>1</td>
    <td><a href="//gramps-project.org/bugs/view.php?id=7464">7464</a></td>
-   <td>Given Name Cloud Gramplet splits up given names into words (broken up by spaces)</td>
+   <td class="issue">Given Name Cloud Gramplet splits up given names into words (broken up by spaces)</td>
   </tr>
  </tbody>
  <tfoot>
@@ -918,7 +918,7 @@
   <tr>
    <td>1</td>
    <td><a href="//gitlab.gnome.org/GNOME/gimp/-/issues/5773">5773</a></td>
-   <td>Right justified Arabic text is rendered left justified!</td>
+   <td class="issue">Right justified Arabic text is rendered left justified!</td>
   </tr>
  </tbody>
  <tfoot>
@@ -968,7 +968,7 @@
   <tr>
    <td>1</td>
    <td><a href="//github.com/IBM/plex/issues/407">407</a></td>
-   <td>ARABIC LIGATURE ALLAH is not handled correctly.</td>
+   <td class="issue">ARABIC LIGATURE ALLAH is not handled correctly.</td>
   </tr>
  </tbody>
  <tfoot>
@@ -1127,7 +1127,7 @@
   <tr>
    <td>1</td>
    <td><a href="//github.com/originaltype/kufam/issues/7">7</a></td>
-   <td>missing glyphs and character overlapping</td>
+   <td class="issue">missing glyphs and character overlapping</td>
   </tr>
  </tbody>
  <tfoot>
@@ -1178,7 +1178,7 @@
   <tr>
    <td>1</td>
    <td><a href="//sourceforge.net/p/chessx/bugs/299/">299</a></td>
-   <td>chessx failed to run natively in wayland</td>
+   <td class="issue">chessx failed to run natively in wayland</td>
   </tr>
  </tbody>
  <tfoot>
