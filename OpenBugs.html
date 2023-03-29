@@ -18,11 +18,13 @@
     totalBugs += totalCounter;
     closedBugs += closedCounter;
     openBugs += openCounter;
+    progress = closedBugs/totalBugs*100;
     $(this).find('tfoot').append("<tr><td colspan=3><em># of open bugs: </em>"+ openCounter +"</td></tr>");
    });
-   $("li:last").after("<li><strong>Total Bugs: </strong>"+ totalBugs);
-   $("li:last").after("<li><strong>Closed Bugs: </strong>"+ closedBugs);
-   $("li:last").after("<li><strong>Open Bugs: </strong>"+ openBugs);
+   $("li:last").after("<li><strong>Total Bugs:</strong> "+ totalBugs);
+   $("li:last").after("<li><strong>Closed Bugs:</strong> "+ closedBugs);
+   $("li:last").after("<li><strong>Open Bugs:</strong> "+ openBugs);
+   $("li:last").after("<li><strong>Progress:</strong> <progress id='progress' max='100' value="+ progress.toFixed() +"></progress>");
   });
   </script>
 
